@@ -1,0 +1,5 @@
+## exportPattern("^[[:alpha:]]+")
+import(survival)
+export(rmst2, rmst2.sample.data)
+S3method(print, rmst2)
+S3method(plot, rmst2)

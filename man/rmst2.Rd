@@ -1,0 +1,81 @@
+\name{rmst2}
+\alias{rmst2}
+\title{
+Comparing restricted mean survival time
+}
+\description{
+Performs two-sample comparisons using the restricted mean survival time (RMST) as a summary measure of the survival time distribution. Three kinds of between-group contrast metrics (i.e., the difference in RMST, the ratio of RMST and the ratio of the restricted mean time lost (RMTL)) are computed. It performs ANCOVA-type adjusted analyses when covariates are passed to it as an argument. 
+
+}
+\usage{
+rmst2(time, status, arm, tau = NULL, covariates = NULL, alpha = 0.05)
+}
+\arguments{
+ \item{time}{
+ The follow-up time for right censored data. 
+}
+  \item{status}{
+The status indicator, 1=event, and 0=right censored.
+}
+  \item{arm}{
+The group indicator for comparison. The elements of this vector take either 1 or 0. Normally, 0=control group, 1=active treatment group. 
+}
+  \item{tau}{
+A scaler value to specify the truncation time point for the RMST calculation.
+ \code{tau} needs to be smaller than the minimum of the largest observed event time in each of the two groups. When \code{tau = NULL}, the default value (i.e., the minimum of the largest observed event time in each of the two groups) is used.  
+}
+  \item{covariates}{
+This specifies covariates to be used for the adjusted analyses. When NULL, unadjusted analyses are performed. When non NULL, the ANOCVA-type adjusted analyses are performed using those variables passed as \code{covariates}. This can be one variable (vector) or more than one variables (matrix).
+}
+  \item{alpha}{
+The default is 0.05. (1-\code{alpha}) confidence intervals are reported. 
+}
+}
+\details{
+For more details, please see the package vignette.
+}
+\value{
+an object of class rmst2. 
+  \item{tau}{the truncation time used in the analyses}
+  \item{note}{a note regarding the truncation time}
+  \item{RMST.arm1}{RMST results in arm 1. This is generated only when \code{covariates} is not specified.}
+  \item{RMST.arm0}{RMST results in arm 0. This is generated only when \code{covariates} is not specified.}
+  \item{unadjusted.result}{Results of the unadjusted analyses. This is generated only when \code{covariates} is not specified.}
+The values below are generated when some covariates are passed to the function.
+  \item{adjusted.result}{Results of the adjusted analyses.}
+  \item{RMST.difference.adjusted}{Results of the parameter estimates with the model to derive an adjusted difference in RMST.}
+  \item{RMST.ratio.adjusted}{Results of the parameter estimates with the model to derive an adjusted ratio of RMST.}
+  \item{RMTL.ratio.adjusted}{Results of the parameter estimates with the model to derive an adjusted ratio of RMTL.}
+}
+\references{
+Uno H, Claggett B, Tian L, Inoue E, Gallo P, Miyata T, Schrag D,
+Takeuchi M, Uyama Y, Zhao L, Skali H, Solomon S, Jacobus S, Hughes
+M, Packer M, Wei LJ. Moving beyond the hazard ratio in quantifying the
+between-group difference in survival analysis. Journal of clinical Oncology 2014, 32, 2380-2385.
+
+Tian L, Zhao L,  Wei LJ. Predicting the restricted mean event time with
+the subject's baseline covariates in survival analysis. Biostatistics 2014, 15, 222-233.
+}
+\author{
+Hajime Uno, Lu Tian, Angel Cronin, Chakib Battioui
+}
+\examples{
+
+#--- sample data ---#
+D=rmst2.sample.data()
+time=D$time
+status=D$status
+arm=D$arm
+tau=NULL
+x=D[,c(4,6,7)]
+
+#--- without covariates ----
+a=rmst2(time, status, arm, tau=10)
+print(a)
+plot(a, xlab="Years", ylab="Probability", density=60)
+
+#--- with covariates ----
+a=rmst2(time, status, arm, tau=10, covariates=x)
+print(a)
+
+}

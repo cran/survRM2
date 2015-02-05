@@ -1,0 +1,11 @@
+1d975ddc800b56a5d9180c6c9bea86d3 *DESCRIPTION
+e967c6fd333b617023b3cd095702e97e *NAMESPACE
+622ade6c155e29a355d924d9552198a8 *R/rmst2-ver002.R
+5af3518a3a8efc27f9b64206ebce2f5e *build/vignette.rds
+fce01a7d9f3a1c8f1e40097c40270eaa *inst/doc/survRM2-vignette3.R
+b5e2d340b157b4a71f9aecb685a52082 *inst/doc/survRM2-vignette3.Rnw
+95613e027101d73f520977a9a3005bff *inst/doc/survRM2-vignette3.pdf
+5e37b4074af2b757f632feb31e1d8863 *man/rmst2.Rd
+29ab79cf0ca8d784e64165248dd73eb5 *man/rmst2.sample.data.Rd
+782fa0eeb511e996ed6b3c0d4628e586 *man/survRM2-package.Rd
+b5e2d340b157b4a71f9aecb685a52082 *vignettes/survRM2-vignette3.Rnw
