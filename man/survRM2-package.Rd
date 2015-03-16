@@ -12,8 +12,8 @@ Performs two-sample comparisons using the restricted mean survival time (RMST) a
 \tabular{ll}{
 Package: \tab survRM2\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2015-2-5\cr
+Version: \tab 1.0-1\cr
+Date: \tab 2015-3-16\cr
 License: \tab GLP-2\cr
 }
 }

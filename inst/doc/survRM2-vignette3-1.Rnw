@@ -26,7 +26,7 @@ library(survival)
 
 \section{Introduction}
 In a comparative, longitudinal clinical study, often the primary endpoint is the time to a specific clinical event, such as death, heart failure hospitalization, tumor progression, and so on. The hazard ratio estimate is almost routinely used to quantify the treatment difference. However, the clinical meaning of such a model-based between-group summary can be rather difficult to interpret when the underlying model assumption (i.e., the proportional hazards assumption) is violated, and it is difficult to assure that the modeling is indeed correct empirically. For example, a non-significant result of a goodness-of-fit test does not necessary mean that the proportional hazards assumption is ``correct.'' Other issues on the hazard ratio is seen elsewhere \cite{Hernan:2010bg,Uno:2014ii}. 
-Between-group summery metrics based on the restricted mean survival time (RMST) are useful alternatives to the hazard ratio or other model-based measures. This vignette is a supplemental documentation for {\it rmst2} package and illustrates how to use the functions in the package to compare two groups with respect to the restricted mean survival time. The package was made and tested on R version 3.1.2.
+Between-group summery metrics based on the restricted mean survival time (RMST) are useful alternatives to the hazard ratio or other model-based measures. This vignette is a supplemental documentation for {\it rmst2} package and illustrates how to use the functions in the package to compare two groups with respect to the restricted mean survival time. The package was made and tested on R version 3.1.3.
 
 
 \section{Sample data}
@@ -155,7 +155,7 @@ obj=rmst2(time, status, arm, tau=10)
 print(obj)
 @ 
 
-In the present case, the difference in RMST (the first row of the "Between-group contrast" block in the output) was 0.137 years. The point estimate indicated that patients on the active treatment survive 0.137 years longer than those on placebo group on average, when following up the patients 10 years. While no statistical significance was observed (p=0.738), the 0.95 confidence interval (-0.665 to 0.939) was relatively tight around 0, suggesting that the difference in RMST would be at most +/- one year. 
+In the present case, the difference in RMST (the first row of the "Between-group contrast" block in the output) was -0.137 years. The point estimate indicated that patients on the active treatment survive 0.137 years shorter than those on placebo group on average, when following up the patients 10 years. While no statistical significance was observed (p=0.738), the 0.95 confidence interval (-0.665 to 0.939) was relatively tight around 0, suggesting that the difference in RMST would be at most +/- one year. 
 
 \vspace{0.3cm}
 
@@ -212,7 +212,7 @@ Subsequently, a summary for each of the three models are provided.
 
 
 \section{Conclusions}
-The issues of the hazard ratio have been discussed elsewhere and many alternatives have been proposed, but the hazard ratio approach is still routinely used. The restricted mean survival time is a robust and clinically interpretable summary measure of survival time distribution. Unlike median survival time, it is estimable even under heavy censoring. There is a considerable body of methodological research about the restricted mean survival time as alternatives to the hazard ratio approach. However, it seems those methods have been rarely used in practice. A lack of user-friendly, well-documented program with clear examples would be a major obstacle for a new, alternative method to be used in practice. We hope this vignette and the presented {\it rmst2} package will be helpful for clinical researchers to try moving beyond the comfort zone -- the hazard ratio. 
+The issues of the hazard ratio have been discussed elsewhere and many alternatives have been proposed, but the hazard ratio approach is still routinely used. The restricted mean survival time is a robust and clinically interpretable summary measure of the survival time distribution. Unlike median survival time, it is estimable even under heavy censoring. There is a considerable body of methodological research about the restricted mean survival time as alternatives to the hazard ratio approach. However, it seems those methods have been rarely used in practice. A lack of user-friendly, well-documented program with clear examples would be a major obstacle for a new, alternative method to be used in practice. We hope this vignette and the presented {\it survRM2} package will be helpful for clinical researchers to try moving beyond the comfort zone -- the hazard ratio. 
 
 
 %% \bibliographystyle{biometri}	% (uses file "plain.bst")

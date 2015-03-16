@@ -9,7 +9,7 @@ tmp <- get("pbc", envir  = environment()) ;
 D=tmp[1:312,c(2:5,10,11,13,19)]
 D$time=D$time/365.25 
 D$status=as.numeric(D$status==2);
-D$arm=as.numeric(D$trt==2) ;
+D$arm=as.numeric(D$trt==1) ;
 DA=D[,c(1, 2, 9, 4:8)]
 DA
 }

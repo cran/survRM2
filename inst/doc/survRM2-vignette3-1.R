@@ -1,4 +1,4 @@
-### R code from vignette source 'survRM2-vignette3.Rnw'
+### R code from vignette source 'survRM2-vignette3-1.Rnw'
 
 ###################################################
 ### code chunk number 1: preamble
@@ -12,14 +12,14 @@ library(survival)
 
 
 ###################################################
-### code chunk number 2: survRM2-vignette3.Rnw:34-36 (eval = FALSE)
+### code chunk number 2: survRM2-vignette3-1.Rnw:34-36 (eval = FALSE)
 ###################################################
 ## library(survival)
 ## ?pbc
 
 
 ###################################################
-### code chunk number 3: survRM2-vignette3.Rnw:41-46
+### code chunk number 3: survRM2-vignette3-1.Rnw:41-46
 ###################################################
 library(survRM2)
 
@@ -29,14 +29,14 @@ head(D[,1:3])
 
 
 ###################################################
-### code chunk number 4: survRM2-vignette3.Rnw:52-54
+### code chunk number 4: survRM2-vignette3-1.Rnw:52-54
 ###################################################
 plot(survfit(Surv(time, status)~arm, data=D), col=c("blue","red"), lwd=2, mark.time=F, xlab="Years",ylab="Probability")
 legend("bottomleft", c("Placebo (arm=0)","D-penicillamine (arm=1)"), col=c("blue","red"), lwd=2)
 
 
 ###################################################
-### code chunk number 5: survRM2-vignette3.Rnw:76-88
+### code chunk number 5: survRM2-vignette3-1.Rnw:76-88
 ###################################################
   fit=survfit(Surv(D$time[D$arm==1], D$status[D$arm==1])~1)
   tau=10
@@ -53,7 +53,7 @@ legend("bottomleft", c("Placebo (arm=0)","D-penicillamine (arm=1)"), col=c("blue
 
 
 ###################################################
-### code chunk number 6: survRM2-vignette3.Rnw:91-108
+### code chunk number 6: survRM2-vignette3-1.Rnw:91-108
 ###################################################
   par(mfrow=c(1,2))
 
@@ -75,7 +75,7 @@ legend("bottomleft", c("Placebo (arm=0)","D-penicillamine (arm=1)"), col=c("blue
 
 
 ###################################################
-### code chunk number 7: survRM2-vignette3.Rnw:126-129
+### code chunk number 7: survRM2-vignette3-1.Rnw:126-129
 ###################################################
 time=D$time
 status=D$status
@@ -83,45 +83,45 @@ arm=D$arm
 
 
 ###################################################
-### code chunk number 8: survRM2-vignette3.Rnw:132-133 (eval = FALSE)
+### code chunk number 8: survRM2-vignette3-1.Rnw:132-133 (eval = FALSE)
 ###################################################
 ## rmst2(time, status, arm, tau=10)
 
 
 ###################################################
-### code chunk number 9: survRM2-vignette3.Rnw:142-143 (eval = FALSE)
+### code chunk number 9: survRM2-vignette3-1.Rnw:142-143 (eval = FALSE)
 ###################################################
 ## rmst2(time, status, arm)
 
 
 ###################################################
-### code chunk number 10: survRM2-vignette3.Rnw:153-155
+### code chunk number 10: survRM2-vignette3-1.Rnw:153-155
 ###################################################
 obj=rmst2(time, status, arm, tau=10)
 print(obj)
 
 
 ###################################################
-### code chunk number 11: survRM2-vignette3.Rnw:163-164
+### code chunk number 11: survRM2-vignette3-1.Rnw:163-164
 ###################################################
 plot(obj, xlab="Years", ylab="Probability")
 
 
 ###################################################
-### code chunk number 12: survRM2-vignette3.Rnw:180-181 (eval = FALSE)
+### code chunk number 12: survRM2-vignette3-1.Rnw:180-181 (eval = FALSE)
 ###################################################
 ## rmst2(time, status, arm, tau=10, covariates=x)
 
 
 ###################################################
-### code chunk number 13: survRM2-vignette3.Rnw:187-189
+### code chunk number 13: survRM2-vignette3-1.Rnw:187-189
 ###################################################
 x=D[,c(4,6,7)]
 head(x)
 
 
 ###################################################
-### code chunk number 14: survRM2-vignette3.Rnw:206-207
+### code chunk number 14: survRM2-vignette3-1.Rnw:206-207
 ###################################################
 rmst2(time, status, arm, tau=10, covariates=x)
 

@@ -22,7 +22,7 @@ The group indicator for comparison. The elements of this vector take either 1 or
 }
   \item{tau}{
 A scaler value to specify the truncation time point for the RMST calculation.
- \code{tau} needs to be smaller than the minimum of the largest observed event time in each of the two groups. When \code{tau = NULL}, the default value (i.e., the minimum of the largest observed event time in each of the two groups) is used.  
+ \code{tau} needs to be smaller than the minimum of the largest observed time in each of the two groups. When \code{tau = NULL}, the default value (i.e., the minimum of the largest observed "event" time in each of the two groups) is used.  
 }
   \item{covariates}{
 This specifies covariates to be used for the adjusted analyses. When NULL, unadjusted analyses are performed. When non NULL, the ANOCVA-type adjusted analyses are performed using those variables passed as \code{covariates}. This can be one variable (vector) or more than one variables (matrix).
