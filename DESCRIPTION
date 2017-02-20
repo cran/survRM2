@@ -1,14 +1,18 @@
 Package: survRM2
 Type: Package
 Title: Comparing Restricted Mean Survival Time
-Version: 1.0-1
-Date: 2015-3-16
-Author: Hajime Uno, Lu Tian, Angel Cronin, Chakib Battioui
+Version: 1.0-2
+Date: 2017-02-21
+Author: Hajime Uno, Lu Tian, Angel Cronin, Chakib Battioui, Miki Horiguchi
 Maintainer: Hajime Uno <huno@jimmy.harvard.edu>
 Depends: survival
 Description: Performs two-sample comparisons using the restricted mean survival time (RMST) as a summary measure of the survival time distribution. Three kinds of between-group contrast metrics (i.e., the difference in RMST, the ratio of RMST and the ratio of the restricted mean time lost (RMTL)) are computed. It performs an ANCOVA-type covariate adjustment as well as unadjusted analyses for those measures. 
 License: GPL-2
-Packaged: 2015-03-16 20:11:34 UTC; Hajime
+LazyData: true
+RoxygenNote: 6.0.1
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
 NeedsCompilation: no
+Packaged: 2017-02-20 13:06:19 UTC; Miki
 Repository: CRAN
-Date/Publication: 2015-03-16 23:53:31
+Date/Publication: 2017-02-20 17:23:13
