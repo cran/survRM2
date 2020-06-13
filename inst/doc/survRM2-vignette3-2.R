@@ -1,19 +1,19 @@
-## ---- echo=TRUE, eval=FALSE----------------------------------------------
+## ---- echo=TRUE, eval=FALSE---------------------------------------------------
 #  library(survival)
 #  ?pbc
 
-## ---- echo=TRUE, eval=TRUE, message=FALSE--------------------------------
+## ---- echo=TRUE, eval=TRUE, message=FALSE-------------------------------------
 library(survRM2)
 
 D = rmst2.sample.data()
 nrow(D)
 head(D[,1:3])
 
-## ---- echo=FALSE, eval=TRUE, fig.height=7, fig.width=7-------------------
+## ---- echo=FALSE, eval=TRUE, fig.height=7, fig.width=7------------------------
 plot(survfit(Surv(time, status)~arm, data=D), col=c("blue","red"), lwd=2, mark.time=F, xlab="Years",ylab="Probability")
 legend("bottomleft", c("Placebo (arm=0)","D-penicillamine (arm=1)"), col=c("blue","red"), lwd=2)
 
-## ---- echo=FALSE, eval=TRUE----------------------------------------------
+## ---- echo=FALSE, eval=TRUE---------------------------------------------------
 fit=survfit(Surv(D$time[D$arm==1], D$status[D$arm==1])~1)
 tau=10
 tmp.xx=c(0, fit$time); tmp.yy=c(1, fit$surv) ;
@@ -26,7 +26,7 @@ y.step=rev(sort(c(1,1,tmp.yy, tmp.yy[-length(tmp.yy)])))
 
 rmst=summary(fit, rmean=10)$table[5]
 
-## ---- echo=FALSE, eval=TRUE, fig.height=7, fig.width=7-------------------
+## ---- echo=FALSE, eval=TRUE, fig.height=7, fig.width=7------------------------
 par(mfrow=c(1,2))
 
 #--------
@@ -45,34 +45,34 @@ polygon(c(xx[i], xx[i+1], xx[i+1], xx[i]), c(yy[i], yy[i+1], 1,1), col="orange",
 lines(x.step, y.step, col="red", lwd=3) 
 text(7,0.8, paste(round(tau-rmst, digits=2),"years"), cex=0.9)
 
-## ---- echo=TRUE, eval=TRUE-----------------------------------------------
+## ---- echo=TRUE, eval=TRUE----------------------------------------------------
 time   = D$time
 status = D$status
 arm    = D$arm
 
-## ---- echo=TRUE, eval=FALSE----------------------------------------------
+## ---- echo=TRUE, eval=FALSE---------------------------------------------------
 #  rmst2(time, status, arm, tau=10)
 
-## ---- echo=TRUE, eval=FALSE----------------------------------------------
+## ---- echo=TRUE, eval=FALSE---------------------------------------------------
 #  rmst2(time, status, arm)
 
-## ---- echo=TRUE, eval=TRUE-----------------------------------------------
+## ---- echo=TRUE, eval=TRUE----------------------------------------------------
 obj = rmst2(time, status, arm, tau=10)
 print(obj)
 
-## ---- echo=TRUE, eval=TRUE, fig.height=7, fig.width=7--------------------
+## ---- echo=TRUE, eval=TRUE, fig.height=7, fig.width=7-------------------------
 plot(obj, xlab="Years", ylab="Probability")
 
-## ---- echo=TRUE, eval=FALSE----------------------------------------------
+## ---- echo=TRUE, eval=FALSE---------------------------------------------------
 #  rmst2(time, status, arm, tau=10, covariates=x)
 
-## ---- echo=FALSE, eval=TRUE----------------------------------------------
+## ---- echo=FALSE, eval=TRUE---------------------------------------------------
 x=D[,c(4,6,7)]
 
-## ---- echo=TRUE, eval=TRUE-----------------------------------------------
+## ---- echo=TRUE, eval=TRUE----------------------------------------------------
 x=D[,c(4,6,7)]
 head(x)
 
-## ---- echo=TRUE, eval=TRUE-----------------------------------------------
+## ---- echo=TRUE, eval=TRUE----------------------------------------------------
 rmst2(time, status, arm, tau=10, covariates=x)
 
