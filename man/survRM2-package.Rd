@@ -29,9 +29,9 @@ print(a)
 Uno H, Claggett B, Tian L, Inoue E, Gallo P, Miyata T, Schrag D,
 Takeuchi M, Uyama Y, Zhao L, Skali H, Solomon S, Jacobus S, HughesM,
 Packer M, Wei LJ. Moving beyond the hazard ratio in quantifying the between-group difference in survival analysis.
-Journal of clinical Oncology 2014, 32, 2380-2385.
+Journal of clinical Oncology 2014, 32, 2380-2385. doi:10.1200/JCO.2014.55.2208.
 
-Tian L, Zhao L,  Wei LJ. Predicting the restricted mean event time with the subject's baseline covariates in survival analysis. Biostatistics 2014, 15, 222-233.
+Tian L, Zhao L,  Wei LJ. Predicting the restricted mean event time with the subject's baseline covariates in survival analysis. Biostatistics 2014, 15, 222-233. doi:10.1093/biostatistics/kxt050.
 }
 \seealso{
 survival

@@ -1,3 +1,7 @@
+# survRM2 version 1.0-4 (2022-06)
+
+### Minor improvements
+* Fixed a bug in the initial check on `tau` in the rmst2 function.
 # survRM2 version 1.0-3 (2020-06)
 
 ### Minor improvements
@@ -5,7 +9,6 @@
 * Updated the code to improve the execution time for RMST analysis with covariates. 
 * Fixed the code to handle large data (>100K observations). 
 * Fixed the code to accept general arguments for plots (e.g., `xlim` and `ylim`) in `plot.rmst2()` function.
-
 
 # survRM2 version 1.0-2 (2017-02)
 ### Minor improvements
